@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app/helper/data.dart';
@@ -6,6 +8,7 @@ import 'package:news_app/model/article.dart';
 import 'package:news_app/model/category.dart';
 import 'package:news_app/views/article_view.dart';
 import 'package:news_app/views/category.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -27,6 +30,7 @@ class _HomeState extends State<Home> {
   void initState() {
     categories = getCategoryData();
     getAndSetNews();
+    //  if (Platform.isAndroid) WebView.platform = SurfaceAndroidWebView();
 
     // TODO: implement initState
     super.initState();
